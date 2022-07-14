@@ -21,7 +21,7 @@ shinyUI(fluidPage(
       h3("This Shiny App is dedicated to predicting housing median 
          sale prices (MSP) in multiple Texas cities. To get a certain MSP,
          a user should specify a city, a month and a year."),
-      h3("To build a predicitve linear model the data set `txhousing` collected
+      h4("To build a predicitve linear model the data set `txhousing` collected
          in 2000-2015 is used. Data points are fitted as `median` vs `year` for selected
          `city` and `month`."),
       plotOutput("plot1"),
