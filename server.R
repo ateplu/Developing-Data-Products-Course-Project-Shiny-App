@@ -34,16 +34,25 @@ shinyServer(function(input, output) {
     
     plot(sset$year, 1.e-03*sset$median, xlab = "Year", 
          ylab = "Median sale price [10^3 $]", bty = "n", pch = 16,
-         xlim = c(1999, 2016), ylim = c(20, 350))
+         xlim = c(1999, 2025), ylim = c(20, 350))
     if(input$showModel1){
-      abline(model1(), col = "red", lwd = 2)
+      abline(model1(), col = "blue", lwd = 2)
     }
 
-    points(yearInput, model1pred(), col = "red", pch = 16, cex = 2)
+    points(yearInput, model1pred(), col = "blue", pch = 16, cex = 2)
   })
   
   output$pred1 <- renderText({
     model1pred()
+    })
+  output$city1 <- renderText({
+    input$city
   })
+    output$month1 <- renderText({
+    input$sliderMonth
+  })
+    output$year1 <- renderText({
+      input$sliderYear
+    })
   
 })
